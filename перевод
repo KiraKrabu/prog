@@ -1,0 +1,12 @@
+#include <iostream>
+
+float length_cen(float a){
+  return a * 2.54;
+}
+
+int main() {
+  float x;
+  std::cin>>x;
+  std::cout << length_cen(x);
+  return 0;
+}
