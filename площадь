@@ -1,0 +1,12 @@
+#include <iostream>
+
+float rectangle_area (float a, float b){
+  return a * b;
+}
+
+int main(){
+  float x, y;
+  std::cin>>x>>y;
+  std::cout<<rectangle_area(x,y);
+  return 0;
+}
