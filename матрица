@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int matrix(int a, int b, int c, int d, int s, int q) { // функция запрашивает элементы матрицы и считает сумму положительных элементов
+  for(int a = 0; a < c; a++){
+    for(int b = 0; b < d; b++){
+      cout <<"Элемент [" << a + 1 << "][" << b + 1 << "]: ";
+      cin >> q;
+      if(q > 0)
+        s += q;
+      }
+  }
+  return s;
+}
+
+int main(){
+  cout << "Введите размерность матрицы (строки, столбцы):" << endl;
+  int i, j, str, stl;
+  int sum = 0;
+  cin >> i;
+  cin >> j;
+  int array[i][j];
+  cout << "Введите элементы матрицы: " << endl;
+  int w = matrix(str, stl, i, j, sum, array[i][j]);
+  cout << "sum: " << w;
+}
