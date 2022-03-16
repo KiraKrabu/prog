@@ -4,7 +4,7 @@ using namespace std;
 int main() {
   cout << "Введите размер массива: ";
   int size;
-  int a, b;
+  int number_of_min, number_of_max;
   cin >> size;
   int array[size];
   for(int i = 0; i < size; i++)
@@ -14,15 +14,15 @@ int main() {
   for(int i = 0; i < size; i++) {
     if(array[i] <= minimal){
       minimal = array[i];
-      a = i;
+      number_of_min = i;
       }
     if(array[i] >= maximal){
       maximal = array[i];
-      b = i;
+      number_of_max = i;
       }
   }
-  array[b] = minimal;
-  array[a] = maximal;
+  array[number_of_max] = minimal;
+  array[number_of_min] = maximal;
   cout << "max: " << maximal << " " << "min: " << minimal << endl;
   for(int i = 0; i < size; i++)
     cout << array[i] << " ";
