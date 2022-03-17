@@ -1,0 +1,29 @@
+//вот и вторая задача
+#include <iostream>
+using namespace std;
+
+int enter_function(int d) { // ф-ия запрашивает числа, пока не встретит 0, запоминая при этом, есть ли не положительные среди них
+  int a;
+  d = 0;
+  do {
+    cin >> a;
+    if (a < 0)
+      d += 1;
+  } while (a != 0);
+  return d;
+}  
+
+void positive_numbers(int a){ // ф-ия определяет, что выводить в зависимости от того, все ли числа положительные, (ф-ия зависит от ф-ии enter_function())
+  if(a == 0) 
+    cout << "Все числа положительные";
+  else 
+    cout << "Не все числа положительные";
+}
+
+int main() {
+  cout << "Введите числа:" << endl;
+  int count;
+  int end = enter_function(count);
+  positive_numbers(end);
+  return 0;
+}
