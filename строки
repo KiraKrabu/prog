@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+  cout << "Введите строку:" << endl;
+  string str;
+  getline(cin, str);
+  str += ' '; // в дальнейшем в цикле у меня не получалось сделать до конца строки (выходила ошибка, что я вышла из массива), поэтому в конец добавила пробел, чтобы если последнее слово тоже было на a то ее тоже выводил
+  string second_str;
+  if(str[0] == 'a' || str[0] == 'A') {
+    for(int a = 0; str[a] != ' '; a++){
+        second_str += str[a];
+      } 
+    second_str += ' ';
+  }
+  for(int i = 1; i < str.size(); i++) {
+    if(str[i-1] == ' ' && (str[i] == 'a' || str[i] == 'A')) {
+      for(int a = 0; (str[i+a] != ' '); a++) {
+        second_str += str[i+a];
+      } 
+    second_str += ' ';
+    }
+  }
+  cout << "With a: " << second_str;
+}
