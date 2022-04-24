@@ -7,8 +7,6 @@ struct drob{
 };
 
 int NOD(int a, int b) {
-	int a1 = a;
-	int b1 = b;
 	while (a > 0 && b > 0) {
 		if (a > b) {
 			a = a % b;
@@ -17,18 +15,23 @@ int NOD(int a, int b) {
 			b = b % a;
 		}
 	}
-	cout << "NOD(" << a1 << ", " << b1 << ") = " << a + b << "\n";
-	return a + b;
+  return a + b;
+}
+
+void reduction(int a, int b){
+  int c = NOD(a, b);
+  a = a / c;
+  b = b / c;
+  cout << a << endl;
+  cout << "--" << endl;
+  cout << b;
 }
 
 int main()
 {
     drob one;
     cin >> one.numerator;
-    cout >> "--";
-    cin >> one.denominator;
-    int d = NOD(one.numerator, one.denominator);
-    cout << one.numerator/d << endl;
     cout << "--" << endl;
-    cout << one.denominator/d << endl;
+    cin >> one.denominator;
+    reduction(one.numerator, one.denominator);
 }
