@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+struct drob{
+    int numerator;
+    int denominator;
+};
+
+int NOD(int a, int b) {
+	while (a > 0 && b > 0) {
+		if (a > b) {
+			a = a % b;
+		}
+		else {
+			b = b % a;
+		}
+	}
+  return a + b;
+}
+
+int reduction_numerator(drob one){
+  int c = NOD(one.numerator, one.denominator);
+  return one.numerator = one.numerator / c;
+}
+
+int reduction_denominator(drob one){
+  int c = NOD(one.numerator, one.denominator);
+  return one.denominator = one.denominator / c;
+}
+
+int main()
+{
+    drob one;
+    cin >> one.numerator;
+    cout << "--" << endl;
+    cin >> one.denominator;
+    cout << reduction_numerator(one) << endl;
+    cout << "--" << endl;
+    cout << reduction_denominator(one);
+}
