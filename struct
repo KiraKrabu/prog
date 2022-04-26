@@ -18,13 +18,14 @@ int NOD(int a, int b) {
   return a + b;
 }
 
-void reduction(int a, int b){
-  int c = NOD(a, b);
-  a = a / c;
-  b = b / c;
-  cout << a << endl;
-  cout << "--" << endl;
-  cout << b;
+int reduction_numerator(drob one){
+  int c = NOD(one.numerator, one.denominator);
+  return one.numerator = one.numerator / c;
+}
+
+int reduction_denominator(drob one){
+  int c = NOD(one.numerator, one.denominator);
+  return one.denominator = one.denominator / c;
 }
 
 int main()
@@ -33,5 +34,7 @@ int main()
     cin >> one.numerator;
     cout << "--" << endl;
     cin >> one.denominator;
-    reduction(one.numerator, one.denominator);
+    cout << reduction_numerator(one) << endl;
+    cout << "--" << endl;
+    cout << reduction_denominator(one);
 }
